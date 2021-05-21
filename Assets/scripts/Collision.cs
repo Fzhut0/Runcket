@@ -7,6 +7,7 @@ public class Collision : MonoBehaviour
 {
 
     [SerializeField] float loadtime = 2f;
+    //todo find better audio
     [SerializeField] AudioClip crashSFX;
     [SerializeField] AudioClip finishSFX;
 
