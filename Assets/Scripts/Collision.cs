@@ -37,12 +37,24 @@ public class Collision : MonoBehaviour
             case "Friendly":
                 break;
             case "Finish":
-
                 FinishSequence();
                 break;
             default:
                 StartCrashSequence();
                 break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (gameObject.tag == "Lava")
+        {
+            isTransitioning = true;
+            audiosrc.Stop();
+            audiosrc.PlayOneShot(crashSFX);
+            crashParticle.Play();
+            GetComponent<Movement>().enabled = false;
+            Invoke("ReloadLevel", loadtime);
         }
     }
 
@@ -99,4 +111,5 @@ public class Collision : MonoBehaviour
             collisionDisable = !collisionDisable;
         }
     }
+
 }
