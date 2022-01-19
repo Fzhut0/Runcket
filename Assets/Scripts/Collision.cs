@@ -47,15 +47,21 @@ public class Collision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (gameObject.tag == "Lava")
+
+        if (other.gameObject.tag == "Lava")
         {
+            Debug.Log("ff");
             isTransitioning = true;
             audiosrc.Stop();
             audiosrc.PlayOneShot(crashSFX);
             crashParticle.Play();
             GetComponent<Movement>().enabled = false;
+
             Invoke("ReloadLevel", loadtime);
         }
+
+
+
     }
 
     void StartCrashSequence()

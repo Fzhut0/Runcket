@@ -17,7 +17,7 @@ public class LavaMover : MonoBehaviour
     void Update()
     {
 
-        if (Vector3.Distance(transform.position, target.transform.position) < 200f)
+        if (target.activeSelf)
         {
             transform.position += transform.right * moveSpeed * Time.deltaTime;
         }
