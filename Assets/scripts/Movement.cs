@@ -16,14 +16,13 @@ public class Movement : MonoBehaviour
     Rigidbody rb;
     AudioSource audiosrc;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audiosrc = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         ProcessThrust();

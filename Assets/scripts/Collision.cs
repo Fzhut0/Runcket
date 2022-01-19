@@ -35,10 +35,9 @@ public class Collision : MonoBehaviour
         switch (collision.gameObject.tag)
         {
             case "Friendly":
-                Debug.Log("this thing is friendly");
                 break;
             case "Finish":
-                Debug.Log("Brawo");
+
                 FinishSequence();
                 break;
             default:
