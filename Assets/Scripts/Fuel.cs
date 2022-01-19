@@ -5,8 +5,8 @@ using UnityEngine;
 public class Fuel : MonoBehaviour
 {
 
-    [SerializeField] float fuelUsage = 2f;
-    [SerializeField] int maxFuel = 100;
+    [SerializeField] int fuelUsage = 1;
+    [SerializeField] int maxFuel = 1000;
     [SerializeField] int currentFuel = 100;
 
     private void Start()
@@ -25,8 +25,9 @@ public class Fuel : MonoBehaviour
     {
         while (Input.anyKey)
         {
-            currentFuel--;
-            yield return new WaitForSeconds(fuelUsage);
+            currentFuel -= fuelUsage;
+            yield return new WaitForSeconds(100f);
+
         }
 
 
