@@ -6,17 +6,19 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] float distanceToSpawn = 50f;
 
+
     [SerializeField] Transform startPart;
     [SerializeField] List<Transform> partList;
     [SerializeField] GameObject player;
+    int amountOfParts = 5;
 
     Vector3 lastEndPos;
+
 
     private void Awake()
     {
         lastEndPos = startPart.Find("EndPosition").position;
-        Transform lastLevelPartTransform;
-        int amountOfParts = 5;
+
         for (int i = 0; i < amountOfParts; i++)
         {
             SpawnPart();
@@ -36,6 +38,7 @@ public class LevelGenerator : MonoBehaviour
         Transform lastLevelPartTransform = SpawnLevelPart(nextPart, lastEndPos);
         lastEndPos = lastLevelPartTransform.Find("EndPosition").position;
 
+
     }
 
     private Transform SpawnLevelPart(Transform part, Vector3 spawnPosition)
@@ -46,10 +49,16 @@ public class LevelGenerator : MonoBehaviour
 
     void PlayerDistanceCheck()
     {
+
         if (Vector3.Distance(player.transform.position, lastEndPos) < distanceToSpawn)
         {
             SpawnPart();
         }
 
+
+
     }
+
+
+
 }
