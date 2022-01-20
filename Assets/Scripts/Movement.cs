@@ -18,6 +18,10 @@ public class Movement : MonoBehaviour
 
     void Start()
     {
+        if (GameObject.FindGameObjectWithTag("StartMenu").activeInHierarchy)
+        {
+            Time.timeScale = 0f;
+        }
         rb = GetComponent<Rigidbody>();
         audiosrc = GetComponent<AudioSource>();
     }
