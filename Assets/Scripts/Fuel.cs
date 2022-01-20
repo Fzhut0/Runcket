@@ -37,8 +37,12 @@ public class Fuel : MonoBehaviour
     {
         while (Input.anyKey)
         {
-            currentFuel -= fuelUsage;
-            yield return new WaitForSeconds(fuellWaitTime);
+            if (Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1)) { yield return null; }
+            else
+            {
+                currentFuel -= fuelUsage;
+                yield return new WaitForSeconds(fuellWaitTime);
+            }
         }
     }
 
