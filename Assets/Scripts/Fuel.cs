@@ -9,15 +9,22 @@ public class Fuel : MonoBehaviour
     [SerializeField] int maxFuel = 1000;
     [SerializeField] int currentFuel = 100;
 
+    Collision crashSequence;
+
     private void Start()
     {
         currentFuel = maxFuel;
+        crashSequence = GetComponent<Collision>();
 
     }
 
     private void Update()
     {
         StartCoroutine("LosingFuel");
+        if (currentFuel <= 0)
+        {
+            crashSequence.StartCrashSequence();
+        }
     }
 
 
@@ -27,7 +34,6 @@ public class Fuel : MonoBehaviour
         {
             currentFuel -= fuelUsage;
             yield return new WaitForSeconds(100f);
-
         }
 
 

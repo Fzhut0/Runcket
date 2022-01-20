@@ -64,7 +64,7 @@ public class Collision : MonoBehaviour
 
     }
 
-    void StartCrashSequence()
+    public void StartCrashSequence()
     {
         isTransitioning = true;
         audiosrc.Stop();
