@@ -7,7 +7,9 @@ public class Fuel : MonoBehaviour
 
     [SerializeField] int fuelUsage = 1;
     [SerializeField] int maxFuel = 1000;
-    [SerializeField] int currentFuel = 100;
+    [SerializeField] public int currentFuel = 100;
+    [SerializeField] int addFuel = 100;
+
 
     Collision crashSequence;
 
@@ -35,8 +37,11 @@ public class Fuel : MonoBehaviour
             currentFuel -= fuelUsage;
             yield return new WaitForSeconds(100f);
         }
+    }
 
-
+    public void AddFuel()
+    {
+        currentFuel += addFuel;
 
     }
 
