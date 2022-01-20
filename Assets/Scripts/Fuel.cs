@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Fuel : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Fuel : MonoBehaviour
     [SerializeField] public int currentFuel = 100;
     [SerializeField] int addFuel = 100;
 
-
+    [SerializeField] Slider fuelSlider;
     Collision crashSequence;
 
     private void Start()
@@ -27,10 +28,11 @@ public class Fuel : MonoBehaviour
         {
             crashSequence.StartCrashSequence();
         }
+        HandleSlider();
     }
 
 
-    IEnumerator LosingFuel()
+    public IEnumerator LosingFuel()
     {
         while (Input.anyKey)
         {
@@ -44,5 +46,12 @@ public class Fuel : MonoBehaviour
         currentFuel += addFuel;
 
     }
+
+    void HandleSlider()
+    {
+        fuelSlider.value = currentFuel;
+
+    }
+
 
 }
