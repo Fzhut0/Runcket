@@ -10,6 +10,7 @@ public class Fuel : MonoBehaviour
     [SerializeField] int maxFuel = 1000;
     [SerializeField] public int currentFuel = 100;
     [SerializeField] int addFuel = 100;
+    [SerializeField] float fuellWaitTime = 300f;
 
     [SerializeField] Slider fuelSlider;
     Collision crashSequence;
@@ -37,7 +38,7 @@ public class Fuel : MonoBehaviour
         while (Input.anyKey)
         {
             currentFuel -= fuelUsage;
-            yield return new WaitForSeconds(100f);
+            yield return new WaitForSeconds(fuellWaitTime);
         }
     }
 
