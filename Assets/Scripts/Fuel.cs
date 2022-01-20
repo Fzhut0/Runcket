@@ -25,8 +25,9 @@ public class Fuel : MonoBehaviour
     private void Update()
     {
         StartCoroutine("LosingFuel");
-        if (currentFuel <= 0)
+        if (currentFuel == 0)
         {
+
             crashSequence.StartCrashSequence();
         }
         HandleSlider();
