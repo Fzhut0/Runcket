@@ -16,6 +16,8 @@ where you can easily die and get player into a state where you want to repeat an
 
 Lava - big chunk of lava is constantly chasing player which forces you to keep up proper flying pace.
 
+Obstacles - you touch them = you die
+
 Fuel - flying with your pod uses fuel which can be refilled by collecting fuel batteries.
 
 Procedural level generation - different parts are randomly selected to create infinite gameplay.
